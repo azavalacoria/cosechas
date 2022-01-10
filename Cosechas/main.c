@@ -16,14 +16,17 @@ const int PROMEDIO_MENSUAL_COSECHADO = 1;
 const int MAYOR_MES_COSECHADO = 2;
 const int MENOR_MES_COSECHADO = 3;
 
-int leerNumero() {
-    return rand() % 200;
+int leerNumero(char mes[LONGITUD_NOMBRE_MES]) {
+    int numero;
+    printf("Cosecha del mes de %s:\t", mes);
+    scanf("%d", &numero);
+    return numero; //rand() % 200;
 }
 
 void leerCosechas(int cosechas[NUMERO_MESES],char meses[NUMERO_MESES][LONGITUD_NOMBRE_MES]) {
     for (int i = 0; i < NUMERO_MESES; i++) {
-        cosechas[i] = leerNumero();
-        printf("%i - Cosecha del mes de %s:\t%i\n",(i + 1), meses[i], cosechas[i]);
+        cosechas[i] = leerNumero(meses[i]);
+        //printf("%i - Cosecha del mes de %s:\t%i\n",(i + 1), meses[i], cosechas[i]);
     }
     
 }
